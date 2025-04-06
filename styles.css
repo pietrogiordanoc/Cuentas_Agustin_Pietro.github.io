@@ -295,3 +295,24 @@ tr:hover {
     font-size: 0.8em;
     color: #777;
 }
+
+#saveOnlineButton {
+    font-size: 0.8em;
+    margin-top: 10px;
+    width: auto;
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#saveOnlineButton:hover {
+    background-color: #2ecc71;
+}

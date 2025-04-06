@@ -283,6 +283,34 @@ function getCurrencySymbol(currency) {
     return currency; // Default to currency code if symbol not found
 }
 
+async function saveTransactionsOnline() {
+    const data = {
+        transactions: transactions,
+        name1: document.getElementById('name1').value,
+        name2: document.getElementById('name2').value,
+        currency: document.getElementById('currency').value
+    };
+
+    try {
+        const response = await fetch('https://api.npoint.io/v1/your_unique_endpoint', { // Replace with your actual endpoint
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            alert('Transactions saved online successfully!');
+        } else {
+            alert('Failed to save transactions online.');
+        }
+    } catch (error) {
+        console.error('Error saving transactions:', error);
+        alert('An error occurred while saving transactions online.');
+    }
+}
+
 // Initial data load (if any)
 window.onload = () => {
     updateTable();
